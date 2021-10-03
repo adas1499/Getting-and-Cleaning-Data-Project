@@ -1,14 +1,14 @@
 # Coursera Getting and Cleaning Data Course Project 
 library(data.table)
 
-setwd("C:/Users/ASUS/Getting-Cleaning-Data-Course-Project")
+setwd("C:/Users/PC/Getting-Cleaning-Data-Course-Project")
 
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file( url, destfile = "data.zip" )
 unzip("data.zip")
 
 # list.files(), reset the working directory
-setwd("C:/Users/ASUS/Getting-Cleaning-Data-Course-Project/UCI HAR Dataset")
+setwd("C:/Users/PC/Getting-Cleaning-Data-Course-Project/UCI HAR Dataset")
 
 # Files that will be used includes the following
 # test/subject_test.txt  , test/X_test.txt  , test/y_test.txt
@@ -69,7 +69,7 @@ data3$activity <- activitynames$V2[ match( data3$activity, activitynames$V1 ) ]
 data4 <- aggregate( . ~ subject + activity, data = data3, FUN = mean )
 
 # write out data4
-setwd("C:/Users/ASUS/Getting-Cleaning-Data-Course-Project")
+setwd("C:/Users/PC/Getting-Cleaning-Data-Course-Project")
 write.table( data4, "averagedata.txt", row.names = FALSE )
 
 
